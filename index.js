@@ -2,12 +2,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 // Routes setup
 const users = require('./routes/api/users.js');
 
 // Setting stuff up
 const app = express();
+app.use(bodyParser.json(), cors());
 
 // DB setup
 const db = require('./config/keys.js').MongoURL;
