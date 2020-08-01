@@ -15,11 +15,9 @@ class Test extends Component{
 			<Button
 			onClick={() =>{
 				// const message = prompt("Message to send to server");
-				console.log("DoG eat dog");
-				axios.get('http://localhost:3000/api/users/') 
+				axios.get('http://localhost:4200/api/users/') 
 					.then(res =>{
-						this.setState ({name: "jojo"});
-						console.log(res.data[0].name);
+						this.setState ({name: res.data[0].name});
 					})
 					.catch(err =>{
 						this.setState ({name: "FUCK"});
@@ -38,4 +36,40 @@ class Test extends Component{
 }
 
 
-export default Test;
+
+class Test2 extends Component{
+	state={
+		status: 'waiting'
+	}
+	meme = () => {
+		const json = {
+			name: "DIO",
+			user: "D4C",
+			pass: "chicken"
+		}
+		console.log("SATAN");
+		axios.post("http://localhost:4200/api/users/new", json, {
+			headers: {
+				'Content-Type': 'application/json'
+			}
+		})
+			.then((test) =>{
+				this.setState({status:"Success"})
+			})
+			.catch((err) => {
+				this.setState({status:"Failure"});
+				;}   );
+
+	}
+	render(){
+		return(
+			<Button onClick={() => this.meme() } > {this.state.status} </Button>);
+		//
+
+
+	}
+}
+
+export {
+	Test, Test2
+}

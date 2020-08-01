@@ -23,7 +23,7 @@ mongoose.connect(db, dbSettings)
 // Routing
 app.use('/api/users', users);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4200;
 
 app.listen(port, () => console.log(`Server started at ${port}`));
 

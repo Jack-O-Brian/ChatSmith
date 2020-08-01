@@ -10,7 +10,7 @@ const User = require('../../model/User.js')
 // @access publc
 router.get('/', (req,res)=>{
 	User.find()
-	.then(user => res.json(user))
+		.then(user => res.json(user))
 
 });
 
@@ -21,6 +21,7 @@ router.get('/', (req,res)=>{
 // @desc Insert new user
 // @access private
 router.post('/new', (req,res)=>{
+	console.log("FUCK");
 	const newUser = new User({
 		name: req.body.name,
 		user: req.body.user,
@@ -29,18 +30,15 @@ router.post('/new', (req,res)=>{
 	newUser.save().then(user => res.json(user));
 });
 
-
 // @route POST api/users
 // @desc Delete user
 // @access private
-router.post('/:id', (req,res)=>{
+router.post('/delete/:id', (req,res)=>{
 	User.findById(req.params.id)
-	.then(user => user.remove()
-		.then( () => res.json({success: true})))
-	.catch(err => res.status(404).json({success:false}));
-	
-
-		});
+		.then(user => user.remove()
+			.then( () => res.json({success: true})))
+		.catch(err => res.status(404).json({success:false}));
+});
 
 
 
@@ -50,9 +48,6 @@ router.post('/:id', (req,res)=>{
 
 
 
-
-
-
-	module.exports = router;
+module.exports = router;
 
 
