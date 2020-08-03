@@ -1,75 +1,86 @@
-import React, { Component } from 'react';
-import {  Button } from 'reactstrap';
+import React, { Component} from 'react';
+import {  Button, Container, Row, Col } from 'reactstrap';
 
 import axios from 'axios'
+// import {test} from  "../api/users.js"
+import {getUsers, deleteUser, newUser} from  "../api/users.js"
 
-class Test extends Component{
+
+class Model extends React.Component{
+	state = {
+		Users: []
+	}
+	insertUser = () => {
+		let name = prompt("Name");
+		let user = prompt("Username");
+		let pass = prompt("Password");
+
+		newUser(name, user, pass).then( () =>{
+			this.refresh();
+		})
 
 
-	state= {
-		name: 'baby'
+
+	}
+
+
+	// Get teh usewr and avoid having to now details about said user.
+	getUser(index){
+		if ( ! this.state.Users.length || this.state.Users[index] == null ){
+			var obj = {name:"", user:"", pass:""};
+			return obj.name;
+		}
+		else{
+			return this.state.Users[index].name
+		}
+	}
+	componentDidMount(){
+		this.refresh();
+	}
+	refresh(){
+		getUsers().then ( (res) => this.setState({Users:res}))
+	}
+	deleteUser(id){
+		deleteUser(id)
+			.then( (res) => {
+				this.refresh();
+			})
+			.catch( (err) => {
+				console.dir(id)
+				console.dir("ID is not found");
+			})
+	}
+	displayUser(){
+		return this.state.Users.map( (user, index) =>(
+			<div key={index}>
+				<Row md={4}> 
+					<Col><Button onClick={() => this.deleteUser( this.state.Users[index]._id) } > Delete User?  </Button></Col>
+					<Col><b>Name:	 </b>  {user.name} </Col>
+					<Col><b>Username:</b> {user.user} </Col>
+					<Col><b>Password:</b> {user.pass} </Col>
+				</Row>
+				<br/>
+			</div>
+		))
+
+
 	}
 
 	render(){
 		return(
-			<Button
-			onClick={() =>{
-				// const message = prompt("Message to send to server");
-				axios.get('http://localhost:4200/api/users/') 
-					.then(res =>{
-						this.setState ({name: res.data[0].name});
-					})
-					.catch(err =>{
-						this.setState ({name: "FUCK"});
-						console.log(err);
-					});
-
-
-			}
-			}>
-
-			{this.state.name} </Button>
+			<div>
+				<Button onClick={() => this.insertUser() } > Insert User </Button>
+				<br/>
+				<br/>
+				<Container>
+					{this.displayUser()} 
+				</Container>
+			</div>
 		);
 	}
-
-
 }
 
-
-
-class Test2 extends Component{
-	state={
-		status: 'waiting'
-	}
-	meme = () => {
-		const json = {
-			name: "DIO",
-			user: "D4C",
-			pass: "chicken"
-		}
-		console.log("SATAN");
-		axios.post("http://localhost:4200/api/users/new", json, {
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		})
-			.then((test) =>{
-				this.setState({status:"Success"})
-			})
-			.catch((err) => {
-				this.setState({status:"Failure"});
-				;}   );
-
-	}
-	render(){
-		return(
-			<Button onClick={() => this.meme() } > {this.state.status} </Button>);
-		//
-
-
-	}
-}
 
 export {
-	Test, Test2
+	Model
 }
