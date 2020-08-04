@@ -21,7 +21,6 @@ router.get('/', (req,res)=>{
 // @desc Insert new user
 // @access private
 router.post('/new', (req,res)=>{
-	console.log("FUCK");
 	const newUser = new User({
 		name: req.body.name,
 		user: req.body.user,

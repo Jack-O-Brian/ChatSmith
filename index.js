@@ -1,10 +1,10 @@
-//Library
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
 // Routes setup
 const users = require('./routes/api/users.js');
+const message = require('./routes/api/message.js');
 
 // Setting stuff up
 const app = express();
@@ -22,6 +22,7 @@ mongoose.connect(db, dbSettings)
 
 // Routing
 app.use('/api/users', users);
+app.use('/api/messages', message);
 
 const port = process.env.PORT || 4200;
 
