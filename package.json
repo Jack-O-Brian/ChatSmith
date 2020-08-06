@@ -1,7 +1,7 @@
 {
-	"name": "syed-app",
+	"name": "Chatsmith",
 	"version": "0.0.1",
-	"description": "Syed and his best friends Kevin, Omar and Muaz make a chat app",
+	"description": "Muaz and his friend Zaki is making a chat app",
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
@@ -10,13 +10,14 @@
 		"dev": "concurrently \" npm run server\" \"npm run client\" ",
 		"prog-install": "npm install && cd client && npm install"
 	},
-	"author": "Syed Akabri",
+	"author": "Muaz and Zaki",
 	"license": "ISC",
 	"dependencies": {
 		"body-parser": "^1.19.0",
 		"concurrently": "^5.2.0",
 		"cors": "^2.8.5",
 		"express": "^4.17.1",
-		"mongoose": "^5.9.26"
+		"mongoose": "^5.9.26",
+		"nodemon": "^2.0.4"
 	}
 }
