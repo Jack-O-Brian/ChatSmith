@@ -1,5 +1,5 @@
 module.exports   = {
-	// MongoURL : 'mongodb://localhost:27017/dev',
+	MongoURL : "mongodb+srv://ikazaki:Jotario_Kujo@development-cluster.axeqh.gcp.mongodb.net/dev" ,
 	settings : {useNewUrlParser: true, useUnifiedTopology: true}
 
 }
