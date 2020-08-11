@@ -42,7 +42,31 @@ router.post('/delete/:id', (req,res)=>{
 
 
 
+// @route Login api/users
+// @desc Find a user by username/password
+// @access private
+// @usage use query parmas, like user=123?pass=123
+router.get("/login/", (req, res)=>{
+	User.findOne({"user": req.query.user, "pass": req.query.pass})
+		.then( user => res.json(user))
+});
 
+// @route Get api/users
+// @desc Find a user by username
+// @access private
+// @usage use query parmas, like user=123?pass=123
+router.get("/get/", (req, res)=>{
+
+	User.findOne({"user": req.query.user}).then( user => {
+		temp ={ id:user.id, user: user.user}
+		res.json(temp)
+	})
+		.catch(err => {
+
+			res.status(200).json(null)
+		}
+		);
+})
 
 
 

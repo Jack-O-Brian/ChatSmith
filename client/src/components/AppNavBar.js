@@ -1,62 +1,47 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
-} from 'reactstrap';
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
-const Example = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
 
-  return (
-    <div>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Chat App</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-            </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Options
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  Option 1
-                </DropdownItem>
-                <DropdownItem>
-                  Option 2
-                </DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>
-                  Reset
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
-          <NavbarText>Simple Text</NavbarText>
-        </Collapse>
-      </Navbar>
-    </div>
-  );
+// Import components from other pages
+import Signup from "../Sign_up.js"
+
+
+import "../CSS/NavBar.css"
+
+const Home = () =>{
+	return (
+		<div>
+			<h1> Megadeth Appericatoin </h1>
+			<h2> By ZA/KI </h2>
+		</div>
+	);
 }
 
-export default Example;
+const NavBar = () =>{
+        return (
+            <div id="navbar">
+                <Router>
+                        <ul >
+                            <li> <Link to="/">Home</Link> </li>
+                            <li> <Link to="/Sign_up">Sign Up</Link> </li>
+                        </ul>
+			
+                    <Switch>
+                        <Route exact path="/"> <Home /> </Route> 
+                        <Route path="/Sign_up"> <Signup /> </Route>
+                    </Switch>
+                </Router>
+		</div>
+
+        );
+    }
+
+export default NavBar;
 
 
