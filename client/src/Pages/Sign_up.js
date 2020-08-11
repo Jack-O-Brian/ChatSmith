@@ -64,13 +64,13 @@ class Signup extends React.Component{
 				<form onSubmit={this.handleSubmit}>
 
 					<label>Username</label><br/>
-					<input type="text" id="user" name="user" value={this.state.user} pattern="[A-za-z0-9]+" maxlength="20" minlenth="4"  onChange={this.handleUser}  /><br/>
+					<input required type="text" id="user" name="user" value={this.state.user} pattern="[A-za-z0-9]+" maxlength="20" minlength="4"  onChange={this.handleUser}  /><br/>
 
 					<label>Password</label><br/>
-					<input type={"password"} id="pass" name="pass" maxlength="20" minlenth="4" value={this.state.pass} onChange={this.handlePass} /><br/>
+					<input required type={"password"} id="pass" name="pass" maxlength="20" minlength="4" value={this.state.pass} onChange={this.handlePass} /><br/>
 
 					<label>Name</label><br/>
-					<input type="text" id="Name" name="Name" value={this.state.name} onChange={this.handleName} /><br/>
+					<input required type="text" id="Name" name="Name" value={this.state.name} onChange={this.handleName} /><br/>
 
 					<input type="submit" value="Submit" onChange={this.handleSubmit}/>
 				</form>
