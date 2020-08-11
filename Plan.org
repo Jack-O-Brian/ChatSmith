@@ -1,0 +1,11 @@
+#+TITLE: User Authetncation
+* TODO User Sign up
+** Input  
+   - Username :: Regex form of `/[!@#\$%\^&*\*\(\)\+\=\\<>,./;'\[\] ]/`
+   - Password :: 6 characters, cannot be from username,
+   - Handle :: Can be any text shorter than 20
+** Output
+   - [ ] Username is already taken :: Tell user to use a differnt username
+   - [ ] Username is unique :: register username, and login
+
+

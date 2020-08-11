@@ -1,21 +1,51 @@
-import React from 'react';
-
+// The index page basically
+import React, { Component } from 'react';
+//This ensrues app.css overwrites bootstrap
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link
+} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-
-// import AppNavbar from './components/AppNavBar.js';
-// import UserReact from './components/UserList.js'
-import {Model} from './components/Test.js'
+import './CSS/App.css';
 
 
-function App() {
+
+// Import components from other pages
+import Signup from "./Pages/Sign_up.js"
+
+
+import "./CSS/NavBar.css"
+
+const Home = () =>{
 	return (
-		<div className="App">
-			<Model />
-
-
+		<div>
+			<h1> Jojo shitposting </h1>
+			<h2> By ZA/AZ </h2>
 		</div>
 	);
 }
 
-export default App;
+export default function App(){
+	return (
+		<div id="navbar">
+			<Router>
+				<ul >
+					<li> <Link to="/">Home</Link> </li>
+					<li> <Link to="/Sign_up">Sign Up</Link> </li>
+				</ul>
+
+				<Switch>
+					<Route exact path="/"> <Home /> </Route> 
+					<Route path="/Sign_up"> <Signup /> </Route>
+				</Switch>
+			</Router>
+		</div>
+
+	);
+}
+
+
+
+
