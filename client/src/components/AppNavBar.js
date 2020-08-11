@@ -10,7 +10,7 @@ import {
 
 // Import components from other pages
 import Signup from "../Sign_up.js"
-
+import Login from "../Log_in.js"
 
 import "../CSS/NavBar.css"
 
@@ -29,12 +29,14 @@ const NavBar = () =>{
                 <Router>
                         <ul >
                             <li> <Link to="/">Home</Link> </li>
-                            <li> <Link to="/Sign_up">Sign Up</Link> </li>
+					        <li> <Link to="/Sign_up">Sign Up</Link> </li>
+					        <li> <Link to="/Log_in">Log In</Link> </li>
                         </ul>
 			
                     <Switch>
                         <Route exact path="/"> <Home /> </Route> 
-                        <Route path="/Sign_up"> <Signup /> </Route>
+					    <Route path="/Sign_up"> <Signup /> </Route>
+					    <Route path="/Log_in"> <Login /> </Route>
                     </Switch>
                 </Router>
 		</div>

@@ -14,7 +14,7 @@ import './CSS/App.css';
 
 // Import components from other pages
 import Signup from "./Pages/Sign_up.js"
-
+import Login from "./Pages/Log_in.js"
 
 import "./CSS/NavBar.css"
 
@@ -34,11 +34,13 @@ export default function App(){
 				<ul >
 					<li> <Link to="/">Home</Link> </li>
 					<li> <Link to="/Sign_up">Sign Up</Link> </li>
+					<li> <Link to="/Log_in">Log In</Link> </li>
 				</ul>
 
 				<Switch>
 					<Route exact path="/"> <Home /> </Route> 
 					<Route path="/Sign_up"> <Signup /> </Route>
+					<Route path="/Log_in"> <Login /> </Route>
 				</Switch>
 			</Router>
 		</div>
