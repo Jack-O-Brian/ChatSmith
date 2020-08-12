@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../CSS/App.css';
 
 // API
-import  {login, getUser}  from "../api/users.js"
+import  {login}  from "../api/users.js"
 
 class Login extends React.Component {
     state={
@@ -26,36 +26,29 @@ class Login extends React.Component {
     handleSubmit = event =>{
 		event.preventDefault()
 		// Form checking the username/password
-        // Checking if user is in database
-        getUser(this.state.user)
-            .then( res => { 
-                // If user is found
-                if(res != null){
-                    alert("Welcome");
-                    
-                    login(this.state.user, this.state.pass)
-                        .then(res => {
-                            this.setState({ user: "", pass:"", name:""})
-                        })
-                        .catch(err => {
-                            this.setState({ user: "", pass:"", name:""})
-                        })
-                }
-                else{
-                    alert("ERROR: Please your Username or Password are incorrect");
-                }
+	    // Checking if user is in database
+	    login(this.state.user, this.state.pass)
+		    .then( res => { 
+			    // If user is found
+			    if(res != null){
+				    alert("Welcome")
+				    this.setState({ user: "", pass:"", name:""})
+			    }
+			    else{
+				    alert("ERROR: Please your Username or Password are incorrect");
+			    }
 
-            })
-            .catch( err =>{
-            })
+		    })
+		    .catch( err =>{
+		    })
 
-			// Error messages start ehre
-	}
-    
-    render(){
+	    // Error messages start ehre
+    }
+
+	render(){
 		return (
 			<div>
-            
+
 				<h1> Enter your username/password</h1>
 				<form onSubmit={this.handleSubmit}>
 
@@ -64,7 +57,7 @@ class Login extends React.Component {
 
 					<label>Password</label><br/>
 					<input required type={"password"} id="pass" name="pass" maxlength="20" minlength="4" value={this.state.pass} onChange={this.handlePass} /><br/>
-                    
+
 					<input type="submit" value="Login" onChange={this.handleSubmit}/>
 				</form>
 
