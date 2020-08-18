@@ -4,7 +4,7 @@ const cors = require('cors');
 
 // Routes setup
 const users = require('./routes/api/users.js');
-const message = require('./routes/api/message.js');
+const chatroom = require('./routes/api/Chatroom.js');
 
 // Setting stuff up
 const app = express();
@@ -22,7 +22,7 @@ mongoose.connect(db, dbSettings)
 
 // Routing
 app.use('/api/users', users);
-app.use('/api/messages', message);
+app.use('/api/chatroom', chatroom);
 
 const port = process.env.PORT || 4200;
 

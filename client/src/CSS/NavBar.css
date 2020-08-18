@@ -1,16 +1,26 @@
 /* Meme seciotn. I just wanna STYLE/learn some CSS */
+:root {
+	--main-color : #B3B586;
+	--back-color : #150D08;
+
+}
 body {
-	  background-image: url('https://starkovtattoo.spb.ru/images/300/DSC100388020.jpg');
-	  color: white;
-	  background-color: white;
+	  /* background-image: url('https://starkovtattoo.spb.ru/images/300/DSC100388020.jpg'); */
+	background-image: url('https://avante.biz/wp-content/uploads/Nujabes-wallpaper/Nujabes-wallpaper-020.jpg');
+	  color: var(--main-color);
+	  background-color: var(--back-color);
 	  background-size: 100%, 100%;
 
 }
 
 h1,h2,h3,h4,h5,h6, p{
-	  color: white;
+	  color: var(--main-color);
 }
-
+#navbar{
+	--button-fore : #432E20;
+	--button-back : #C6A056;
+	--button-hover: #437BAB;
+}
  #navbar ul {
 	 font-size: 1.5em;
 	list-style-type: none;
@@ -19,7 +29,7 @@ h1,h2,h3,h4,h5,h6, p{
 	overflow: hidden;
 
 	/* Ucomment this when we don't have Jojo wallpaepr anymore */
-	/* background-color: #333; */
+	background-color: var(--button-back);
 	position: -webkit-sticky; /* Safari */
 	position: sticky;
 	top: 0;
@@ -31,16 +41,13 @@ h1,h2,h3,h4,h5,h6, p{
 
 #navbar li  a {
 	display: block;
-	color: white;
+	color: var(--button-fore);
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
 }
 
 #navbar li  a:hover {
-	background-color: #111;
+	background-color: var(--button-hover);
 }
 
-#navbar .active {
-	background-color: #4CAF50;
-}
