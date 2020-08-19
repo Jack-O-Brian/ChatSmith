@@ -1,8 +1,10 @@
 #+TITLE: Chatroom implentation
 
-* TODO API [0/5]
-** TODO add User to chatroom by url
-** TODO Remove user from chatroom
+* TODO API [2/6]
+** DONE add User to chatroom by url
+   CLOSED: [2020-08-19 Wed 14:04]
+** DONE Remove user from chatroom
+   CLOSED: [2020-08-19 Wed 15:46]
 ** TODO Change user's privialge level
 ** TODO Send a message to a chatroom
 ** TODO Check the userlist in a chatroom

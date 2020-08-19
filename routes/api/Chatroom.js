@@ -71,4 +71,27 @@ router.post("/addurl", (req, res)=>{
 				res.status(404).json({success:false})
 			});
 });
+
+// @route post rmuser
+// @desc remove a user form a chatroom  
+// @usage json apremters of user and the chatroom's id
+router.post("/rmuser", (req, res)=>{
+	Chatroom.find({_id:req.body._id})
+		.then( chatroom =>{
+			Chatroom.updateOne(
+				{"_id": req.body._id},
+				{"$pull":{
+					"user_list":{
+						"username":req.body.user
+					}
+				}})
+				.then(room => res.status(202).json(room))
+		})
+		.catch( () =>{
+			res.status(404).json({success:false})
+		})
+});
+
+
+
 module.exports = router;
