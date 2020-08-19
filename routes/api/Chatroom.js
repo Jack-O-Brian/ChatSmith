@@ -49,7 +49,16 @@ router.post('/new', (req,res)=>{
 router.post("/addurl", (req, res)=>{
 	Chatroom.find({url:req.body.url})
 		.then( chatroom => { 
-			Chatroom.updateOne({"url": req.body.url}, {"$push":{"user_list":{"username":req.body.user, "role":"JOJO"}}})
+			Chatroom.updateOne(
+				{"url": req.body.url},
+				{
+					"$push":{
+						"user_list":{
+							"username":req.body.user,
+							"role":"JOJO"
+						}
+					}
+				})
 			Chatroom.findOne({"url": req.body.url})
 				.then( room => res.status(200).json(room))
 

@@ -6,7 +6,8 @@ const ChatroomSchema = new Schema({
 	name: String,
 	url: String,
 	user_list:[{
-		username:{type: mongoose.Schema.Types.ObjectId, ref: "User"},
+		// username:{type: mongoose.Schema.Types.ObjectId, ref: "User"},
+		username:String,
 		role: String
 	}],
 	Message_list:[{
