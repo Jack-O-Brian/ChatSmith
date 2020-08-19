@@ -59,6 +59,7 @@ router.post("/addurl", (req, res)=>{
 						}
 					}
 				})
+				.then(wow => {console.log(wow)})
 			Chatroom.findOne({"url": req.body.url})
 				.then( room => res.status(200).json(room))
 
