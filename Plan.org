@@ -1,11 +1,14 @@
-#+TITLE: User Authetncation
-* TODO User Sign up
-** Input  
-   - Username :: Regex form of `/[!@#\$%\^&*\*\(\)\+\=\\<>,./;'\[\] ]/`
-   - Password :: 6 characters, cannot be from username,
-   - Handle :: Can be any text shorter than 20
-** Output
-   - [ ] Username is already taken :: Tell user to use a differnt username
-   - [ ] Username is unique :: register username, and login
+#+TITLE: Chatroom implentation
 
-
+* TODO API [0/5]
+** TODO add User to chatroom by url
+** TODO Remove user from chatroom
+** TODO Change user's privialge level
+** TODO Send a message to a chatroom
+** TODO Check the userlist in a chatroom
+** TODO Delete chatroom   
+* TODO UI [0/4]
+** TODO Direct API Implentations  
+** TODO Kick a userk from chat if admin or above
+** TODO Leave a chatroom
+** TODO Get url and invite user

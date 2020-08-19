@@ -41,12 +41,20 @@ router.post('/new', (req,res)=>{
 				date:null
 			}
 		}
-
 	})
 	newRoom.save().then(room => res.json(room))
 		.catch(err => res.status(404).json({success:false}));
-
 });
 
 
+// @route POST api/chatroom/addurl
+// @desc Add a user to a chatroom using url
+// @usage json paremters of name/url
+router.post("/addurl", (req, res)=>{
+	Chatroom.find({url:req.body.url})
+		.then( chatroom => { 
+			res.status(202).json({success:true})
+		})
+		.catch(err => res.status(404).json({success:false}));
+});
 module.exports = router;
