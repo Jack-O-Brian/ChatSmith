@@ -16,10 +16,36 @@ router.get('/', (req,res)=>{
 
 });
 
-router.post('/new/:name', (req,res)=>{
-	const newRoom = new Chatroom({
+// Returns a new random url to be associated with a page
+// It's a function becasue we will change it in the future
+function newUrl(){
+	return "http://localhost:4200/chatroom/rnd="+new Date().getTime()
+}
 
-	});
+
+// @route POST api/chatroom/new
+// @desc Enter a new chatroom by name, and user creating it
+// @access private
+// @usage json paramters name and user (user is a user in database)
+router.post('/new', (req,res)=>{
+	const newRoom = new Chatroom({
+		name: req.body.name,
+		url: newUrl(),
+		user_list:{
+			user: { username: req.body.user, role:"Owner"}
+		},
+		Message_list:{
+			Message:{
+				username:null,
+				message_text:null,
+				date:null
+			}
+		}
+
+	})
+	newRoom.save().then(room => res.json(room))
+		.catch(err => res.status(404).json({success:false}));
+
 });
 
 

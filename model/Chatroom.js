@@ -4,8 +4,8 @@ const User = require('./User')
 
 // Create message sceham
 const ChatroomSchema = new Schema({
-	Name: String,
-	Url: String,
+	name: String,
+	url: String,
 	user_list:{
 		user:{
 			username:{type: mongoose.Schema.Types.ObjectId, ref: "User"},
