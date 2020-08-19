@@ -4,22 +4,27 @@ const User = require('./User')
 
 // Create message sceham
 const ChatroomSchema = new Schema({
-	message: {
-		text:{
-			type: String,
-		},
-		date:{
-			type: Date,
+	Name: String,
+	Url: String,
+	user_list:{
+		user:{
+			username:{type: mongoose.Schema.Types.ObjectId, ref: "User"},
+			role: String
 		}
 	},
-	userid:{
-		type: mongoose.Schema.Types.ObjectId,
-		ref: "User"
-	},
-	date:{
-		type: Date,
-		default: Date.now
+	Message_list:{
+		Message:{
+			date:{
+				type:Date,
+				default: Date.now
+			},
+			username:{type: mongoose.Schema.Types.ObjectId, ref: "User"},
+			message_text: String
+
+		}
+
 	}
+
 
 
 });

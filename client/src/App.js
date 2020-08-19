@@ -24,7 +24,7 @@ import "./CSS/NavBar.css"
 const Home = () =>{
 	return (
 		<div>
-			<h1> Jojo </h1>
+			<h1> Chatsmith </h1>
 			<h2> By ZA/AZ </h2>
 		</div>
 	);
