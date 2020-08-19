@@ -5,24 +5,19 @@ const Schema = mongoose.Schema;
 const ChatroomSchema = new Schema({
 	name: String,
 	url: String,
-	user_list:{
-		user:{
-			username:{type: mongoose.Schema.Types.ObjectId, ref: "User"},
-			role: String
-		}
-	},
-	Message_list:{
-		Message:{
-			date:{
-				type:Date,
-				default: Date.now
-			},
-			username:{type: mongoose.Schema.Types.ObjectId, ref: "User"},
-			message_text: String
+	user_list:[{
+		username:{type: mongoose.Schema.Types.ObjectId, ref: "User"},
+		role: String
+	}],
+	Message_list:[{
+		date:{
+			type:Date,
+			default: Date.now
+		},
+		username:{type: mongoose.Schema.Types.ObjectId, ref: "User"},
+		message_text: String
 
-		}
-
-	}
+	}]
 
 
 

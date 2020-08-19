@@ -31,16 +31,12 @@ router.post('/new', (req,res)=>{
 	const newRoom = new Chatroom({
 		name: req.body.name,
 		url: newUrl(),
-		user_list:{
-			user: { username: req.body.user, role:"Owner"}
-		},
-		Message_list:{
-			Message:{
-				username:null,
-				message_text:null,
-				date:null
-			}
-		}
+		user_list:[{
+			username: req.body.user,
+			role:"Owner"
+		}],
+		Message_list:[{
+		}]
 	})
 	newRoom.save().then(room => res.json(room))
 		.catch(err => res.status(404).json({success:false}));
