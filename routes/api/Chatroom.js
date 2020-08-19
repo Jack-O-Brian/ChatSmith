@@ -45,12 +45,20 @@ router.post('/new', (req,res)=>{
 
 // @route POST api/chatroom/addurl
 // @desc Add a user to a chatroom using url
-// @usage json paremters of name/url
+// @usage json paremters of user/url
 router.post("/addurl", (req, res)=>{
 	Chatroom.find({url:req.body.url})
 		.then( chatroom => { 
-			res.status(202).json({success:true})
+			Chatroom.updateOne({"url": req.body.url}, {"$push":{"user_list":{"username":req.body.user, "role":"JOJO"}}})
+			Chatroom.findOne({"url": req.body.url})
+				.then( room => res.status(200).json(room))
+
+
 		})
-		.catch(err => res.status(404).json({success:false}));
+		.catch(err => 
+			{
+				console.log(err)
+				res.status(404).json({success:false})
+			});
 });
 module.exports = router;
