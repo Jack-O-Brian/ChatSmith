@@ -1,16 +1,38 @@
 #+TITLE: Chatroom implentation
 
-* TODO API [2/6]
+* TODO API [7/7]
 ** DONE add User to chatroom by url
    CLOSED: [2020-08-19 Wed 14:04]
 ** DONE Remove user from chatroom
    CLOSED: [2020-08-19 Wed 15:46]
-** TODO Change user's privialge level
-** TODO Send a message to a chatroom
-** TODO Check the userlist in a chatroom
-** TODO Delete chatroom   
+** DONE Change user's privialge level
+   CLOSED: [2020-08-22 Sat 09:20]
+** DONE Send a message to a chatroom
+   CLOSED: [2020-08-22 Sat 09:54]
+** DONE Check the userlist in a chatroom
+   CLOSED: [2020-08-22 Sat 10:05]
+** DONE Get messages and sort based on time
+   CLOSED: [2020-08-22 Sat 10:17]
+   Messages may come in the wrong order
+** DONE Delete chatroom   
+   CLOSED: [2020-08-22 Sat 10:21]
 * TODO UI [0/4]
-** TODO Direct API Implentations  
+** TODO Direct API Implentations   in AXIOS
+*** TODO add User to chatroom by url
+	CLOSED: [2020-08-19 Wed 14:04]
+*** TODO Remove user from chatroom
+	CLOSED: [2020-08-19 Wed 15:46]
+*** TODO Change user's privialge level
+	CLOSED: [2020-08-22 Sat 09:20]
+*** TODO Send a message to a chatroom
+	CLOSED: [2020-08-22 Sat 09:54]
+*** TODO Check the userlist in a chatroom
+	CLOSED: [2020-08-22 Sat 10:05]
+*** TODO Get messages and sort based on time
+	CLOSED: [2020-08-22 Sat 10:17]
+	Messages may come in the wrong order
+*** TODO Delete chatroom   
+	CLOSED: [2020-08-22 Sat 10:21]
 ** TODO Kick a userk from chat if admin or above
 ** TODO Leave a chatroom
 ** TODO Get url and invite user
