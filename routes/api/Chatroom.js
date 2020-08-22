@@ -93,5 +93,28 @@ router.post("/rmuser", (req, res)=>{
 });
 
 
+// @route post chmoduser
+// @desc Change user's previliages 
+// @usage json paremters of user, chatorom's id and level
+router.post("/chmoduser", (req, res)=>{
+
+	var user={
+		"username":req.body.user,
+		"role": req.body.level
+	};
+	Chatroom.updateOne(
+		{_id:req.body._id,"user_list.username":req.body.user} ,
+		{
+			$set: { "user_list.$": user}
+		})
+		.then( chatroom => res.status(200).json({chatroom}))
+		.catch( err =>{
+			console.log(err)
+			res.status(404).json({err})
+		})
+
+
+});
+
 
 module.exports = router;
