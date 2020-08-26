@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link
 } from "react-router-dom";
 
 
@@ -24,25 +24,25 @@ const Home = () =>{
 }
 
 const NavBar = () =>{
-        return (
-            <div id="navbar">
-                <Router>
-                        <ul >
-                            <li> <Link to="/">Home</Link> </li>
-					        <li> <Link to="/Sign_up">Sign Up</Link> </li>
-					        <li> <Link to="/Log_in">Log In</Link> </li>
-                        </ul>
-			
-                    <Switch>
-                        <Route exact path="/"> <Home /> </Route> 
-					    <Route path="/Sign_up"> <Signup /> </Route>
-					    <Route path="/Log_in"> <Login /> </Route>
-                    </Switch>
-                </Router>
+	return (
+		<div id="navbar">
+			<Router>
+				<ul >
+					<li> <Link to="/">Home</Link> </li>
+					<li> <Link to="/Sign_up">Sign Up</Link> </li>
+					<li> <Link to="/Log_in">Log In</Link> </li>
+				</ul>
+
+				<Switch>
+					<Route exact path="/"> <Home /> </Route> 
+					<Route path="/Sign_up"> <Signup /> </Route>
+					<Route path="/Log_in"> <Login /> </Route>
+				</Switch>
+			</Router>
 		</div>
 
-        );
-    }
+	);
+}
 
 export default NavBar;
 

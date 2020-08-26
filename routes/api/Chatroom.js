@@ -55,6 +55,7 @@ router.post('/new', (req,res)=>{
 // @desc Add a user to a chatroom using url
 // @usage json paremters of user/url
 router.post("/addurl", (req, res)=>{
+	console.log("YOUR");
 	Chatroom.find({url:req.body.url})
 		.then( chatroom => { 
 			Chatroom.updateOne(
