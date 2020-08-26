@@ -18,6 +18,7 @@ import './CSS/App.css';
 import Signup from "./Pages/Sign_up.js"
 import Login from "./Pages/Log_in.js"
 import Chatroom from "./Pages/Chatroom.js"
+import TEST from "./Pages/TestPage.js"
 
 import "./CSS/NavBar.css"
 
@@ -41,7 +42,7 @@ export default class App extends React.Component {
 		if ( this.state.userid != null){
 			return(
 				<div>
-				<Redirect to="/Chatroom" />
+					<Redirect to="/Chatroom" />
 					<li> <Link to="/Chatroom">Global Chat</Link> </li>
 				</div>
 			);
@@ -61,27 +62,30 @@ export default class App extends React.Component {
 
 	};
 
-render(){
-	return (
-		<div id="navbar">
-			<Router>
-				<ul >
-					<li> <Link to="/">Home</Link> </li>
-					{this.userLoginLinks()}
+	render(){
+		return (
+			<div id="navbar">
+				<Router>
+					<ul >
+						<li> <Link to="/MEEM"> MEME </Link> </li>
+						<li> <Link to="/">Home</Link> </li>
+						{this.userLoginLinks()}
 
-				</ul>
+					</ul>
 
-				<Switch>
-					<Route exact path="/"> <Home /> </Route> 
-					<Route path="/Sign_up"> <Signup /> </Route>
-					<Route path="/Log_in"> <Login setID={this.getUserID}/> </Route>
-					<Route path="/Chatroom"> <Chatroom /> </Route>
-				</Switch>
-			</Router>
-		</div>
+					<Switch>
+						<Route exact path="/"> <Home /> </Route> 
+						<Route path="/Sign_up"> <Signup /> </Route>
+						<Route path="/Log_in"> <Login setID={this.getUserID}/> </Route>
+						<Route path="/Chatroom"> <Chatroom /> </Route>
+						<Route path="/MEEM"> <TEST /> </Route>
 
-	);
-}
+					</Switch>
+				</Router>
+			</div>
+
+		);
+	}
 }
 
 

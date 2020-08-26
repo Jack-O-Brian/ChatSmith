@@ -13,6 +13,6 @@ tmux new-session -d -s $session
 
 urxvtq -e tmux attach -t Server
 urxvtq -e tmux attach -t Client
-postman
+postman & disown
 emacsclient -c /home/zaki/Projects/Programm/ChatSmith/Plan.org
 
