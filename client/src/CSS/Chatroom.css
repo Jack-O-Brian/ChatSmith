@@ -1,4 +1,8 @@
-#inputmessage{
-	/* position: absolute; */
-	bottom: 10px;
+#inputmessage {
+  /* position: absolute; */
+  bottom: 10px;
+}
+
+.ChatRoom-Components {
+  display: flex;
 }

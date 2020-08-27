@@ -28,9 +28,11 @@ export default class Chatroom extends React.Component {
   render() {
     return (
       <div>
-        <UserList />
-        <ChatBox />
-        <ChatroomList />
+        <div className="ChatRoom-Components">
+          <UserList className="UserList" />
+          <ChatBox className="ChatBox" />
+          <ChatroomList className="ChatroomList" />
+        </div>
         <form onSubmit={this.handleSubmit}>
           {/* <input required type="text" name="user" placeholder="Which user?"  value={this.state.message} onChange={this.handleChange} id="inputmessage"/><br/> */}
           <input
