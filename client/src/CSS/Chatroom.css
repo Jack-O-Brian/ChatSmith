@@ -19,14 +19,17 @@
 .UserList {
   border: 1px solid green;
   flex-grow: 1;
+  flex-basis: 12.5%;
 }
 
 .ChatBox {
   border: 1px solid yellow;
   flex-grow: 5;
+  flex-basis: 75%;
 }
 
 .ChatroomList {
   border: 1px solid aquamarine;
   flex-grow: 1;
+  flex-basis: 12.5%;
 }
