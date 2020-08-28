@@ -1,6 +1,6 @@
 import React from "react";
-import ChatBox from "./ChatBox";
-import ChatroomList from "./ChatroomList";
+import ChatBox from "../components/ChatBox";
+import ChatroomList from "../components/ChatroomList";
 import UserList from "./UserList";
 
 import "bootstrap/dist/css/bootstrap.min.css";
