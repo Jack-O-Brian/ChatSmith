@@ -4,5 +4,29 @@
 }
 
 .ChatRoom-Components {
+  height: 92vh;
   display: flex;
+  align-items: stretch;
+}
+
+.UserList,
+.ChatBox,
+.ChatroomList {
+  margin: 4px;
+  border-radius: 5px;
+}
+
+.UserList {
+  border: 1px solid green;
+  flex-grow: 1;
+}
+
+.ChatBox {
+  border: 1px solid yellow;
+  flex-grow: 5;
+}
+
+.ChatroomList {
+  border: 1px solid aquamarine;
+  flex-grow: 1;
 }
