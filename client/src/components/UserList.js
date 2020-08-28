@@ -48,8 +48,8 @@ function UserList() {
           {users.map((user) => (
             <CSSTransition key={user.id} timeout={500} classNames="fade">
               <ListGroupItem>
-                <button onClick={() => removeUser(user.id)}>X</button>
                 {"Username: " + user.username}
+                <button onClick={() => removeUser(user.id)}>X</button>
               </ListGroupItem>
             </CSSTransition>
           ))}
