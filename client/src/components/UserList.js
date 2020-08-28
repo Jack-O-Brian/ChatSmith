@@ -1,63 +1,62 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, ListGroup, ListGroupItem, Button } from "reactstrap";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { v1 as uuid } from "uuid";
 
-class UserReact extends Component {
-  state = {
-    users: [
-      { id: uuid(), name: "Zaki", username: "D4C" },
-      { id: uuid(), name: "Haroun", username: "Ragalah" },
-      { id: uuid(), name: "Rae", username: "rdizzle420" },
-      { id: uuid(), name: "Issa", username: "JustinBeaver" },
-    ],
+import "../CSS/UserList.css";
+
+function UserList() {
+  const initialUsers = [
+    { id: uuid(), name: "Zaki", username: "D4C" },
+    { id: uuid(), name: "Haroun", username: "Ragalah" },
+    { id: uuid(), name: "Rae", username: "rdizzle420" },
+    { id: uuid(), name: "Issa", username: "JustinBeaver" },
+  ];
+  const initialState = JSON.parse(window.localStorage.getItem("users"));
+
+  const [users, setUsers] = useState(initialState || initialUsers);
+
+  useEffect(() => {
+    window.localStorage.setItem("users", JSON.stringify(users));
+  });
+
+  const addUser = () => {
+    const newName = prompt("Enter Name");
+    const newUsername = prompt("Enter Username");
+    if (newName && newUsername) {
+      const newUsers = users.map((user) => {
+        return user;
+      });
+
+      newUsers.push({ id: uuid(), name: newName, username: newUsername });
+
+      setUsers(newUsers);
+    }
   };
 
-  render() {
-    const { users } = this.state;
-    return (
-      <Container>
-        <Button
-          onClick={() => {
-            const name = prompt("Enter Name");
-            const username = prompt("Enter usernamee");
-            if (name && username) {
-              this.setState((state) => ({
-                users: [...state.users, { id: uuid(), name, username }],
-              }));
-            }
-          }}
-        >
-          Add Item{" "}
-        </Button>
+  const removeUser = (id) => {
+    const newUsers = users.filter((user) => user.id !== id);
 
-        <ListGroup>
-          <TransitionGroup className="userList">
-            {users.map(({ id, name, username }) => (
-              <CSSTransition key={id} tiemout={500} classNames="fade">
-                <ListGroupItem>
-                  <Button
-                    className="remove-btn"
-                    color="danger"
-                    onClick={() => {
-                      this.setState((state) => ({
-                        users: state.users.filter((user) => user.id !== id),
-                      }));
-                    }}
-                  >
-                    {" "}
-                    &times;{" "}
-                  </Button>
-                  {"Username:" + username}
-                  {"Name:" + name}
-                </ListGroupItem>
-              </CSSTransition>
-            ))}
-          </TransitionGroup>
-        </ListGroup>
-      </Container>
-    );
-  }
+    setUsers(newUsers);
+  };
+
+  return (
+    <div className="UserList">
+      <button onClick={addUser}>Add User</button>
+      <ListGroup>
+        <TransitionGroup className="userList">
+          {users.map((user) => (
+            <CSSTransition key={user.id} timeout={500} classNames="fade">
+              <ListGroupItem>
+                <button onClick={() => removeUser(user.id)}>X</button>
+                {"Username: " + user.username}
+              </ListGroupItem>
+            </CSSTransition>
+          ))}
+        </TransitionGroup>
+      </ListGroup>
+    </div>
+  );
 }
 
-export default UserReact;
+export default UserList;

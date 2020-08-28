@@ -1,7 +1,7 @@
 import React from "react";
 import ChatBox from "../components/ChatBox";
 import ChatroomList from "../components/ChatroomList";
-import UserList from "./UserList";
+import UserList from "../components/UserList";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../CSS/App.css";
@@ -14,6 +14,7 @@ export default class Chatroom extends React.Component {
   state = {
     message: "",
   };
+
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
