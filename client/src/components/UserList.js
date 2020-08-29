@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Container, ListGroup, ListGroupItem, Button } from "reactstrap";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { v1 as uuid } from "uuid";
+import UserSettings from "./UserSettings";
 
 import "../CSS/UserList.css";
 
@@ -12,6 +11,7 @@ function UserList() {
     { id: uuid(), name: "Rae", username: "rdizzle420" },
     { id: uuid(), name: "Issa", username: "JustinBeaver" },
   ];
+
   const initialState = JSON.parse(window.localStorage.getItem("users"));
 
   const [users, setUsers] = useState(initialState || initialUsers);
