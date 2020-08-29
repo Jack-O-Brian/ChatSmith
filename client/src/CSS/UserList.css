@@ -1,3 +1,32 @@
-.userList {
-  font-size: 11px;
+.UserList {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.UserList-user {
+  border: 1px solid #d6b656;
+  border-radius: 4px;
+  background-color: #3c261b;
+  color: #eadbc7;
+  font-weight: 600;
+  display: flex;
+  padding: 4px 4px 4px 8px;
+  margin: 8px 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.UserList-serverSettingsBtn button,
+.UserList-userSettingsBtn {
+  border: 1px solid #757343;
+  border-radius: 4px;
+  background-color: #813d36;
+  color: #130307;
+  font-weight: 700;
+}
+
+.UserList-serverSettingsBtn {
+  margin: 8px 8px;
 }

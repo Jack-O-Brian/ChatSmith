@@ -42,19 +42,24 @@ function UserList() {
 
   return (
     <div className="UserList">
-      <button onClick={addUser}>Add User</button>
-      <ListGroup>
-        <TransitionGroup className="userList">
-          {users.map((user) => (
-            <CSSTransition key={user.id} timeout={500} classNames="fade">
-              <ListGroupItem>
-                {"Username: " + user.username}
-                <button onClick={() => removeUser(user.id)}>X</button>
-              </ListGroupItem>
-            </CSSTransition>
-          ))}
-        </TransitionGroup>
-      </ListGroup>
+      <div>
+        {users.map((user) => (
+          <div className="UserList-usercontainer">
+            <div className="UserList-user">
+              {user.username}
+              <button
+                className="UserList-userSettingsBtn"
+                onClick={() => removeUser(user.id)}
+              >
+                Cog Image
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="UserList-serverSettingsBtn">
+        <button onClick={addUser}>Cog Image</button>
+      </div>
     </div>
   );
 }
