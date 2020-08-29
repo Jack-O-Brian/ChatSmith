@@ -16,6 +16,9 @@ function UserList() {
 
   const [users, setUsers] = useState(initialState || initialUsers);
 
+  const [userSettingsBtn, setUserSettingsBtn] = useState(false);
+  const [serverSettingsBtn, setServerSettingsBtn] = useState(false);
+
   useEffect(() => {
     window.localStorage.setItem("users", JSON.stringify(users));
   });
@@ -51,14 +54,16 @@ function UserList() {
                 className="UserList-userSettingsBtn"
                 onClick={() => removeUser(user.id)}
               >
-                Cog Image
+                <img src={require("../Images/Cog-Unselected.png")} />
               </button>
             </div>
           </div>
         ))}
       </div>
       <div className="UserList-serverSettingsBtn">
-        <button onClick={addUser}>Cog Image</button>
+        <button onClick={addUser}>
+          <img src={require("../Images/Cog-Unselected.png")} />
+        </button>
       </div>
     </div>
   );

@@ -27,6 +27,33 @@
   font-weight: 700;
 }
 
+.UserList-userSettingsBtn {
+  display: flex;
+  padding: 2px;
+}
+
+.UserList-serverSettingsBtn button {
+  display: flex;
+  align-items: flex-end;
+  padding: 5px;
+}
+
 .UserList-serverSettingsBtn {
   margin: 8px 8px;
+}
+
+.UserList-userSettingsBtn img {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 20px;
+  width: 20px;
+}
+
+.UserList-serverSettingsBtn img {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 40px;
+  width: 40px;
 }
