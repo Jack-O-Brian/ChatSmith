@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { v1 as uuid } from "uuid";
-import UserSettings from "./UserSettings";
+import UserSettings from "./UserSettingsButton";
 
 import "../CSS/UserList.css";
 
@@ -50,12 +50,13 @@ function UserList() {
           <div className="UserList-usercontainer">
             <div className="UserList-user">
               {user.username}
-              <button
+              <UserSettings />
+              {/* <button
                 className="UserList-userSettingsBtn"
                 onClick={() => removeUser(user.id)}
               >
                 <img src={require("../Images/Cog-Unselected.png")} />
-              </button>
+              </button> */}
             </div>
           </div>
         ))}
