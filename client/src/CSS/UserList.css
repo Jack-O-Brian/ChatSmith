@@ -46,8 +46,8 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
 }
 
 .UserList-serverSettingsBtn img {
