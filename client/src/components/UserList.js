@@ -17,8 +17,8 @@ function UserList() {
 
   const [users, setUsers] = useState(initialState || initialUsers);
 
-  const [userSettingsBtn, setUserSettingsBtn] = useState(false);
-  const [serverSettingsBtn, setServerSettingsBtn] = useState(false);
+  const [userSettingsState, toggleUserSettingsState] = useState(false);
+  const [serverSettingsState, toggleServerSettingsState] = useState(false);
 
   useEffect(() => {
     window.localStorage.setItem("users", JSON.stringify(users));
