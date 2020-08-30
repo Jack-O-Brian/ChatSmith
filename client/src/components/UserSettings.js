@@ -1,9 +1,9 @@
 import React from "react";
-import "../CSS/UserSettingsInterfaceAndButton.css";
+import "../CSS/UserSettings.css";
 
 function UserSettings() {
   return (
-    <div className="UserList-userSettingsMenuContent">
+    <div className="UserList-userSettingsMenu">
       <div className="UserSettings-Username">Username</div>
       <div className="UserSettings-PrioritySelector">
         Priority

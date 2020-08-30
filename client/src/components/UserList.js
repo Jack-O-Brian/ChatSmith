@@ -62,10 +62,11 @@ function UserList() {
           </div>
         ))}
       </div>
-      <div className="UserList-serverSettingsBtn">
-        <button onClick={addUser}>
+      <div>
+        <ServerSettings />
+        {/* <button onClick={addUser}>
           <img src={require("../Images/Cog-Unselected.png")} />
-        </button>
+        </button> */}
       </div>
     </div>
   );

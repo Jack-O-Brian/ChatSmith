@@ -18,7 +18,7 @@
   justify-content: space-between;
 }
 
-.UserList-serverSettingsBtn button,
+.UserList-serverSettingsBtn,
 .UserList-userSettingsBtn {
   border: 1px solid #757343;
   border-radius: 4px;
@@ -32,7 +32,7 @@
   padding: 2px;
 }
 
-.UserList-serverSettingsBtn button {
+.UserList-serverSettingsBtn {
   display: flex;
   align-items: flex-end;
   padding: 5px;
