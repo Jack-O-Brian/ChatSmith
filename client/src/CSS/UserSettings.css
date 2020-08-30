@@ -46,10 +46,6 @@
   color: #eadbc7;
 }
 
-.UserSettings-RemoveUserbtn {
-  background-color: #bd6c3a;
-}
-
 .UserSettings-RemoveUserbtn,
 .UserSettings-CancelBtn,
 .UserSettings-SaveBtn,
@@ -59,4 +55,8 @@
   border: 1px solid #757343;
   background-color: #3c261b;
   border-radius: 4px;
+}
+
+.UserSettings-RemoveUserbtn {
+  background-color: #bd6c3a;
 }
