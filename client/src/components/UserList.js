@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { v1 as uuid } from "uuid";
 import UserSettings from "./UserSettingsButton";
+import ServerSettings from "./ServerSettingsButton";
 
 import "../CSS/UserList.css";
 
