@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Overlay } from "react-bootstrap";
 
 import UserSettings from "./UserSettings";
-import "../CSS/UserSettings.css";
+import "../CSS/UserSettingsInterfaceAndButton.css";
 
 function UserSettingsButton() {
   const [show, setShow] = useState(false);

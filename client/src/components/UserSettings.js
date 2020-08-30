@@ -1,5 +1,5 @@
 import React from "react";
-import "../CSS/UserSettings.css";
+import "../CSS/UserSettingsInterfaceAndButton.css";
 
 function UserSettings() {
   return (
