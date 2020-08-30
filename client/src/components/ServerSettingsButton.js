@@ -25,7 +25,9 @@ function ServerSettingsButton() {
       </button>
       <Overlay target={target.current} show={show} placement="right">
         {({ placement, arrowProps, show: _show, popper, ...props }) => (
-          <div {...props}>Hello</div>
+          <div {...props}>
+            <ServerSettings />
+          </div>
         )}
       </Overlay>
     </>
