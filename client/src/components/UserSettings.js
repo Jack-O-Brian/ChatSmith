@@ -12,10 +12,10 @@ function UserSettings() {
           //   value={this.state.Choice}
           //   onChange={this.handleChange}
         >
-          <option selected value="Admin">
-            Admin
+          <option selected value="User">
+            User
           </option>
-          <option value="User">User</option>
+          <option value="Admin">Admin</option>
         </select>
       </div>
       <button className="UserSettings-SaveBtn">Save</button>
