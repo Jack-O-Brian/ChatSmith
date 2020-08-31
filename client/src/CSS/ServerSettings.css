@@ -1,0 +1,54 @@
+.UserList-serverSettingsMenu {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border: 1px solid #e2dbd8;
+  border-radius: 4px;
+  background-color: #130307;
+  color: #eadbc7;
+  justify-content: center;
+  margin: 1rem 1rem;
+  height: 18vh;
+  width: 33vh;
+}
+
+.ServerSettings-chatUrl {
+  font-size: 20px;
+  padding: 6px 0 0 6px;
+  width: 30.6vh;
+  height: 3rem;
+  margin: 10px 5px 15px 5px;
+  align-self: flex-start;
+
+  border: 1px solid #757343;
+  background-color: #3c261b;
+  border-radius: 4px;
+}
+
+.ServerSettings-CancelBtn,
+.ServerSettings-LeaveServerBtn,
+.ServerSettings-DeleteBtn {
+  font-size: 15px;
+  margin-bottom: 2px;
+  text-align: center;
+  width: 8.8vh;
+  height: 2rem;
+  color: #e2dbd8;
+  border: 1px solid #757343;
+  border-radius: 4px;
+}
+
+.ServerSettings-CancelBtn {
+  margin-left: 110px;
+  background-color: #3c261b;
+}
+
+.ServerSettings-LeaveServerBtn {
+  margin-left: 10px;
+  background-color: #bd6c3a;
+}
+
+.ServerSettings-DeleteBtn {
+  margin-left: 200px;
+  background-color: #bd6c3a;
+}

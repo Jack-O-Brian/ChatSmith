@@ -1,0 +1,59 @@
+.UserList {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.UserList-user {
+  border: 1px solid #d6b656;
+  border-radius: 4px;
+  background-color: #3c261b;
+  color: #eadbc7;
+  font-weight: 600;
+  display: flex;
+  padding: 4px 4px 4px 8px;
+  margin: 8px 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.UserList-serverSettingsBtn,
+.UserList-userSettingsBtn {
+  border: 1px solid #757343;
+  border-radius: 4px;
+  background-color: #813d36;
+  color: #130307;
+  font-weight: 700;
+}
+
+.UserList-userSettingsBtn {
+  display: flex;
+  padding: 2px;
+}
+
+.UserList-serverSettingsBtn {
+  display: flex;
+  align-items: flex-end;
+  padding: 5px;
+}
+
+.UserList-serverSettingsBtn {
+  margin: 8px 8px;
+}
+
+.UserList-userSettingsBtn img {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 25px;
+  width: 25px;
+}
+
+.UserList-serverSettingsBtn img {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 40px;
+  width: 40px;
+}

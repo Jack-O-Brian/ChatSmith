@@ -1,0 +1,29 @@
+.ChatroomList {
+  display: flex;
+  flex-direction: column;
+}
+
+.ChatroomListAddButton {
+  border: 2px dashed #895240;
+  border-radius: 10px;
+  color: #eadbc7;
+  background: rgba(181, 155, 99, 0.5);
+  text-align: center;
+  font-size: 45px;
+  font-weight: 400;
+  height: 8vh;
+}
+
+.ChatroomList-chatroomOption {
+  display: flex;
+  margin-bottom: 2px;
+  padding: 0 0 0 20px;
+  border: 2px solid #895240;
+  border-radius: 10px;
+  color: black;
+  align-items: center;
+  background-color: #b59b63;
+  font-size: 22px;
+  font-weight: 400;
+  height: 8vh;
+}

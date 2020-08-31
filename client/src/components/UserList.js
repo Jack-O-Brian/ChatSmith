@@ -1,64 +1,75 @@
-import React, { Component } from 'react';
-import { Container, ListGroup, ListGroupItem, Button } from 'reactstrap';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import {v1 as uuid} from "uuid";
+import React, { useState, useEffect } from "react";
+import { v1 as uuid } from "uuid";
+import UserSettings from "./UserSettingsButton";
+import ServerSettings from "./ServerSettingsButton";
 
+import "../CSS/UserList.css";
 
-class UserReact extends Component {
-	state = {
-		users: [
-			{ id: uuid(), name: 'Zaki', username: 'D4C'  },
-			{ id: uuid(), name: 'Haroun', username: 'Ragalah'  },
-			{ id: uuid(), name: 'Rae', username: 'rdizzle420'  },
-			{ id: uuid(), name: 'Issa', username: 'JustinBeaver'  }
-		]
-	}
+function UserList() {
+  const initialUsers = [
+    { id: uuid(), name: "Zaki", username: "D4C" },
+    { id: uuid(), name: "Haroun", username: "Ragalah" },
+    { id: uuid(), name: "Rae", username: "rdizzle420" },
+    { id: uuid(), name: "Issa", username: "JustinBeaver" },
+  ];
 
-	render(){
-		const { users } = this.state;
-		return (
-			<Container>
-			<Button 
-				onClick={() =>{
-					const name = prompt("Enter Name");
-					const username = prompt("Enter usernamee");
-					if( name && username){
-						this.setState(state => ({
-							users: [...state.users, {id : uuid(), name, username}]
-						}));
+  const initialState = JSON.parse(window.localStorage.getItem("users"));
 
-					}
-			}}>
-			Add Item </Button>	
+  const [users, setUsers] = useState(initialState || initialUsers);
 
-			  <ListGroup>
-				<TransitionGroup className="userList">
-				{users.map(({ id, name, username }) => (
-					<CSSTransition key={id} tiemout={500} classNames="fade">
-						<ListGroupItem>
-						<Button className="remove-btn"
-						color="danger"
-						onClick={() => {
-							this.setState(state => ({
-								users: state.users.filter(user => user.id !== id)
-							}));
-						}}> &times; </Button>
-						{"Username:"+username}
-						{"Name:" + name}
-						</ListGroupItem>
-					</CSSTransition>
+  const [userSettingsState, toggleUserSettingsState] = useState(false);
+  const [serverSettingsState, toggleServerSettingsState] = useState(false);
 
-				))}
-				</TransitionGroup>
-			  </ListGroup>
+  useEffect(() => {
+    window.localStorage.setItem("users", JSON.stringify(users));
+  });
 
+  const addUser = () => {
+    const newName = prompt("Enter Name");
+    const newUsername = prompt("Enter Username");
+    if (newName && newUsername) {
+      const newUsers = users.map((user) => {
+        return user;
+      });
 
-			</Container>
-		);
+      newUsers.push({ id: uuid(), name: newName, username: newUsername });
 
+      setUsers(newUsers);
+    }
+  };
 
-	}
-	
+  const removeUser = (id) => {
+    const newUsers = users.filter((user) => user.id !== id);
+
+    setUsers(newUsers);
+  };
+
+  return (
+    <div className="UserList">
+      <div>
+        {users.map((user) => (
+          <div className="UserList-usercontainer">
+            <div className="UserList-user">
+              {user.username}
+              <UserSettings />
+              {/* <button
+                className="UserList-userSettingsBtn"
+                onClick={() => removeUser(user.id)}
+              >
+                <img src={require("../Images/Cog-Unselected.png")} />
+              </button> */}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div>
+        <ServerSettings />
+        {/* <button onClick={addUser}>
+          <img src={require("../Images/Cog-Unselected.png")} />
+        </button> */}
+      </div>
+    </div>
+  );
 }
 
-export default UserReact;
+export default UserList;
